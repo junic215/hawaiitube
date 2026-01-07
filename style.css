@@ -73,15 +73,27 @@ body {
 
 /* Gallery Container */
 .gallery-container {
-    max-width: 900px;
+    width: 100%;
+    max-width: 600px;
+    /* Mobile width constraint */
     margin: 0 auto;
-    padding: 0 16px;
+    padding: 0 20px;
     display: grid;
-    /* Changed from flex to grid */
-    grid-template-columns: repeat(2, 1fr);
-    /* Force 2 columns */
-    gap: 20px;
-    /* Reduced gap */
+    grid-template-columns: 1fr;
+    /* Mobile: 1 Column */
+    gap: 30px;
+}
+
+/* PC / Tablet Response */
+@media (min-width: 768px) {
+    .gallery-container {
+        max-width: 1400px;
+        /* PC: Wider width */
+        padding: 0 40px;
+        grid-template-columns: repeat(2, 1fr);
+        /* PC: 2 Columns */
+        gap: 40px;
+    }
 }
 
 /* Video Card + Wrapper */
