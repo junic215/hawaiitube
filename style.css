@@ -1,16 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600&display=swap');
 
 :root {
-    --bg-dark: #121212;
-    /* Deep Black/Gray */
-    --text-primary: #ffffff;
-    --text-secondary: #aaaaaa;
-    --accent-gold: #e50914;
-    /* Netflix Red-ish or Gold? User asked for accessible/stylish. Let's start with a subtle Teal/Gold mix for Hawaii */
-    --accent-ocean: #26c6da;
+    /* "Luxury Hawaii" Palette */
+    --bg-base: #f9f7f2;
+    /* Warm sophisticated sand/eggshell */
+    --text-primary: #1a4d46;
+    /* Deep expensive Teal */
+    --text-secondary: #5d7572;
+    /* Muted greenish gray */
+    --accent-gold: #c5a065;
+    /* Champaign Gold for accents */
+    --card-bg: #ffffff;
 
-    --card-bg: #1e1e1e;
-    --shadow-premium: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+    --shadow-premium: 0 20px 60px -15px rgba(26, 77, 70, 0.15);
+    /* Colored delicate shadow */
 }
 
 * {
@@ -20,7 +23,7 @@
 }
 
 body {
-    background-color: var(--bg-dark);
+    background-color: var(--bg-base);
     color: var(--text-primary);
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
@@ -29,15 +32,16 @@ body {
 
 /* Hero Header */
 .hero-header {
-    height: 60vh;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: radial-gradient(circle at center, #2b2b2b 0%, #000000 100%);
+    /* Bright, dreamy gradient: Sky blue to sand */
+    background: linear-gradient(135deg, #e0f7fa 0%, #fff8e1 100%);
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 
 .header-content {
@@ -47,19 +51,18 @@ body {
 .brand-title {
     font-family: 'Bebas Neue', cursive;
     font-size: 5rem;
-    letter-spacing: 4px;
+    letter-spacing: 6px;
     color: var(--text-primary);
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    line-height: 1;
-    margin-bottom: 8px;
-    background: linear-gradient(45deg, #ffffff, #26c6da);
+    /* Subtle gradient on text */
+    background: linear-gradient(45deg, #00897b, #c5a065);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin-bottom: 12px;
 }
 
 .brand-subtitle {
-    font-size: 1rem;
-    letter-spacing: 3px;
+    font-size: 0.9rem;
+    letter-spacing: 4px;
     color: var(--text-secondary);
     text-transform: uppercase;
     font-weight: 600;
@@ -67,14 +70,14 @@ body {
 
 .scroll-indicator {
     position: absolute;
-    bottom: 20px;
+    bottom: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--text-secondary);
+    color: var(--accent-gold);
     font-size: 0.8rem;
-    opacity: 0.7;
-    animation: bounce 2s infinite;
+    opacity: 0.8;
+    animation: bounce 3s infinite;
 }
 
 /* Gallery Container */
@@ -84,18 +87,15 @@ body {
     padding: 0 20px;
     display: flex;
     flex-direction: column;
-    gap: 60px;
-    /* More spacing for cinematic feel */
+    gap: 80px;
 }
 
-/* Video Card (Cinema Style) */
+/* Video Card (Cinema Style - Light Ver) */
 .video-card {
     background-color: transparent;
-    /* No card bg, just floating elements */
     opacity: 0;
-    /* Init hidden for animation */
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transform: translateY(40px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .video-card.visible {
@@ -109,15 +109,18 @@ body {
     /* 16:9 */
     height: 0;
     overflow: hidden;
-    border-radius: 16px;
+    border-radius: 24px;
+    /* Softer rounded corners */
     box-shadow: var(--shadow-premium);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease;
+    background-color: #fff;
+    /* Loading bg */
 }
 
 /* Hover Effect on Wrapper */
 .video-wrapper:hover {
     transform: scale(1.02);
-    box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 30px 80px -20px rgba(0, 77, 64, 0.3);
 }
 
 .video-wrapper iframe {
@@ -130,13 +133,15 @@ body {
 }
 
 .video-info {
-    padding: 20px 8px;
+    padding: 30px 10px 10px;
+    text-align: center;
+    /* Center align for elegance */
 }
 
 .video-info h2 {
     font-family: 'Bebas Neue', cursive;
-    font-size: 2rem;
-    margin-bottom: 8px;
+    font-size: 2.5rem;
+    margin-bottom: 12px;
     color: var(--text-primary);
     letter-spacing: 1px;
 }
@@ -144,14 +149,16 @@ body {
 .video-info p {
     font-size: 0.95rem;
     color: var(--text-secondary);
-    font-weight: 300;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 /* Animations */
 @keyframes fadeInDown {
     from {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translateY(-30px);
     }
 
     to {
@@ -171,52 +178,53 @@ body {
     }
 
     40% {
-        transform: translateY(-10px);
+        transform: translateY(-8px);
     }
 
     60% {
-        transform: translateY(-5px);
+        transform: translateY(-4px);
     }
 }
 
 /* Footer */
 footer {
-    margin-top: 80px;
-    padding: 60px 20px;
+    margin-top: 100px;
+    padding: 80px 20px;
     text-align: center;
-    background-color: #000;
+    background: linear-gradient(to top, #f0f4f8, transparent);
 }
 
 .coming-soon {
     font-family: 'Bebas Neue', cursive;
-    font-size: 2rem;
-    color: #333;
-    /* Subtle */
-    margin-bottom: 20px;
+    font-size: 2.2rem;
+    color: var(--accent-gold);
+    margin-bottom: 24px;
     letter-spacing: 2px;
 }
 
 .video-placeholder {
-    width: 60px;
-    height: 60px;
-    border: 2px dashed #333;
+    width: 64px;
+    height: 64px;
+    border: 2px solid var(--accent-gold);
     border-radius: 50%;
-    margin: 0 auto 10px;
+    margin: 0 auto 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #333;
-    font-size: 1.5rem;
+    color: var(--accent-gold);
+    font-size: 2rem;
+    font-weight: 300;
 }
 
 .copyright {
-    font-size: 0.7rem;
-    color: #444;
+    font-size: 0.75rem;
+    color: #8898aa;
+    letter-spacing: 1px;
 }
 
 /* Responsive */
 @media (min-width: 768px) {
     .brand-title {
-        font-size: 6rem;
+        font-size: 7rem;
     }
 }
