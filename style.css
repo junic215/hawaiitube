@@ -31,8 +31,12 @@ body {
 }
 
 /* Hero Header */
+/* Hero Header */
 .hero-header {
-    height: 50vh;
+    height: auto;
+    /* Allow flexible height */
+    padding: 60px 20px 30px;
+    /* Add padding instead of fixed height */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,53 +45,43 @@ body {
     /* Bright, dreamy gradient: Sky blue to sand */
     background: linear-gradient(135deg, #e0f7fa 0%, #fff8e1 100%);
     position: relative;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
+    /* Reduced from 60px */
 }
 
-.header-content {
-    animation: fadeInDown 1.2s ease-out;
-}
+/* ... (content styles same) ... */
 
 .brand-title {
     font-family: 'Bebas Neue', cursive;
-    font-size: 5rem;
+    font-size: 4rem;
+    /* Slightly smaller to fit tight space if needed */
     letter-spacing: 6px;
     color: var(--text-primary);
-    /* Subtle gradient on text */
     background: linear-gradient(45deg, #00897b, #c5a065);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
+    line-height: 1.1;
 }
 
-.brand-subtitle {
-    font-size: 0.9rem;
-    letter-spacing: 4px;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    font-weight: 600;
-}
+/* ... (subtitle same) ... */
 
 .scroll-indicator {
-    position: absolute;
-    bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: var(--accent-gold);
-    font-size: 0.8rem;
-    opacity: 0.8;
-    animation: bounce 3s infinite;
+    /* Hide scroll indicator if header is short/compact now */
+    display: none;
 }
 
 /* Gallery Container */
 .gallery-container {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 80px;
+    padding: 0 16px;
+    display: grid;
+    /* Changed from flex to grid */
+    grid-template-columns: repeat(2, 1fr);
+    /* Force 2 columns */
+    gap: 20px;
+    /* Reduced gap */
 }
 
 /* Video Card + Wrapper */
