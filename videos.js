@@ -1,8 +1,8 @@
 const videos = [
     {
         id: "OAHPfU0xNtw",
-        title: "Hawaii VLOG 01",
-        description: "Arrival in Honolulu and checking into the hotel. Exploring Waikiki beach."
+        title: "Part 01",
+        description: "いよいよ出発の日！ハワイの長旅がはじまった！"
     },
     {
         id: "zFQbotstY-I",
