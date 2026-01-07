@@ -6,15 +6,12 @@ function renderVideos() {
     videos.forEach(video => {
         const card = document.createElement('div');
         card.className = 'video-card';
-        // video-wrapper has shadow and shape, video-info is text below
+        // USE FACADE PATTERN: Image first, Click for Video
         card.innerHTML = `
-            <div class="video-wrapper">
-                <iframe 
-                    src="https://www.youtube.com/embed/${video.id}?modestbranding=1&rel=0" 
-                    title="${video.title}" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
+            <div class="video-wrapper" onclick="loadVideo(this, '${video.id}')">
+                <div class="video-facade">
+                    <img class="thumbnail-img" src="https://img.youtube.com/vi/${video.id}/maxresdefault.jpg" alt="${video.title}" loading="lazy">
+                </div>
             </div>
             <div class="video-info">
                 <h2>${video.title}</h2>
@@ -27,6 +24,20 @@ function renderVideos() {
 
     // Add Scroll Animation
     setupObserver();
+}
+
+// Function to replace Image with YouTube Iframe
+function loadVideo(wrapper, videoId) {
+    // Check if already loaded to avoid re-loading
+    if (wrapper.querySelector('iframe')) return;
+
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+    iframe.title = "YouTube video player";
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+    iframe.allowFullscreen = true;
+
+    wrapper.appendChild(iframe);
 }
 
 function setupObserver() {
