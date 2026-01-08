@@ -218,6 +218,67 @@ body {
     }
 }
 
+/* --- GAME SECTION (Super Hawaii) --- */
+/* --- GAME SECTION (Super Hawaii) --- */
+#game-section {
+    margin: 40px auto 20px;
+    width: 100%;
+    max-width: 600px;
+    /* Mobile match */
+    padding: 0 20px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    #game-section {
+        max-width: 1400px;
+        /* PC Match */
+        padding: 0 40px;
+    }
+}
+
+.game-container {
+    /* Frameless Design */
+    background-color: transparent;
+    padding: 24px 0;
+    border: none;
+    box-shadow: none;
+}
+
+.game-title {
+    font-family: 'Press Start 2P', cursive;
+    color: var(--text-primary);
+    /* Use Deep Teal */
+    font-size: 1.8rem;
+    line-height: 1.5;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    letter-spacing: 0;
+}
+
+.game-subtitle {
+    font-family: 'Press Start 2P', cursive;
+    color: #666;
+    font-size: 0.7rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#gameCanvas {
+    background-color: #5c94fc;
+    /* Mario Sky Blue */
+    width: 100%;
+    height: 320px;
+    /* Slightly taller */
+    border-radius: 4px;
+    /* Border removed for seamless look */
+    cursor: pointer;
+    image-rendering: pixelated;
+    /* Crisp pixels */
+    touch-action: none;
+}
+
 /* Footer */
 footer {
     margin-top: 100px;
