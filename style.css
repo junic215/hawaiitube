@@ -166,7 +166,8 @@ body {
 
 /* Info Section */
 .video-info {
-    padding: 30px 10px 10px;
+    padding: 15px 10px 10px;
+    /* Reduced top spacing for mobile connection */
     text-align: center;
 }
 
