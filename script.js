@@ -11,7 +11,7 @@ function renderVideos() {
             <div class="video-wrapper" onclick="loadVideo(this, '${video.id}')">
                 <div class="video-facade">
                      <!-- Added timestamp to force cache refresh -->
-                    <img class="thumbnail-img" src="https://img.youtube.com/vi/${video.id}/maxresdefault.jpg?t=${new Date().getTime()}" alt="${video.title}" loading="lazy">
+                    <img class="thumbnail-img" src="https://i.ytimg.com/vi_webp/${video.id}/maxresdefault.webp?t=${new Date().getTime()}" alt="${video.title}" loading="lazy">
                 </div>
             </div>
             <div class="video-info">
