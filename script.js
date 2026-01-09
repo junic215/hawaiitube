@@ -10,7 +10,8 @@ function renderVideos() {
         card.innerHTML = `
             <div class="video-wrapper" onclick="loadVideo(this, '${video.id}')">
                 <div class="video-facade">
-                    <img class="thumbnail-img" src="https://img.youtube.com/vi/${video.id}/maxresdefault.jpg" alt="${video.title}" loading="lazy">
+                     <!-- Added timestamp to force cache refresh -->
+                    <img class="thumbnail-img" src="https://img.youtube.com/vi/${video.id}/maxresdefault.jpg?t=${new Date().getTime()}" alt="${video.title}" loading="lazy">
                 </div>
             </div>
             <div class="video-info">
