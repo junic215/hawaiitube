@@ -28,5 +28,10 @@ const videos = [
         id: "zlrWI3cnuD0",
         title: "Hawaii VLOG 06",
         description: "Final day, souvenir shopping, and flight home."
+    },
+    {
+        id: "umh0wjJdf0U",
+        title: "Hawaii VLOG 07",
+        description: "Continuing the adventure in Hawaii!"
     }
 ];
