@@ -10,8 +10,11 @@ function renderVideos() {
         card.innerHTML = `
             <div class="video-wrapper" onclick="loadVideo(this, '${video.id}')">
                 <div class="video-facade">
-                     <!-- Added timestamp to force cache refresh -->
-                    <img class="thumbnail-img" src="https://i.ytimg.com/vi_webp/${video.id}/maxresdefault.webp?t=${new Date().getTime()}" alt="${video.title}" loading="lazy">
+                    <img class="thumbnail-img" 
+                         data-video-id="${video.id}"
+                         src="https://i.ytimg.com/vi_webp/${video.id}/maxresdefault.webp" 
+                         alt="${video.title}" 
+                         loading="lazy">
                 </div>
             </div>
             <div class="video-info">
@@ -25,6 +28,9 @@ function renderVideos() {
 
     // Add Scroll Animation
     setupObserver();
+
+    // Setup thumbnail fallback after images load
+    setupThumbnailFallback();
 }
 
 // Function to replace Image with YouTube Iframe
@@ -39,6 +45,44 @@ function loadVideo(wrapper, videoId) {
     iframe.allowFullscreen = true;
 
     wrapper.appendChild(iframe);
+}
+
+// Function to setup thumbnail fallback for images that fail to load properly
+function setupThumbnailFallback() {
+    const thumbnails = document.querySelectorAll('.thumbnail-img');
+
+    thumbnails.forEach(img => {
+        img.addEventListener('load', function () {
+            // Check if the loaded image is a placeholder (YouTube returns 120x90 placeholder for 404s)
+            if (this.naturalWidth < 200) {
+                const videoId = this.getAttribute('data-video-id');
+
+                // Try sddefault.jpg first
+                const sdUrl = `https://i.ytimg.com/vi/${videoId}/sddefault.jpg`;
+
+                const testImg = new Image();
+                testImg.onload = () => {
+                    if (testImg.naturalWidth >= 200) {
+                        this.src = sdUrl;
+                    } else {
+                        // Fall back to hqdefault.jpg
+                        this.src = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+                    }
+                };
+                testImg.onerror = () => {
+                    // If sddefault fails, use hqdefault
+                    this.src = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+                };
+                testImg.src = sdUrl;
+            }
+        });
+
+        // Also handle actual errors
+        img.addEventListener('error', function () {
+            const videoId = this.getAttribute('data-video-id');
+            this.src = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+        });
+    });
 }
 
 function setupObserver() {

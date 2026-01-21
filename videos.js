@@ -7,31 +7,31 @@ const videos = [
     {
         id: "zFQbotstY-I",
         title: "Hawaii VLOG 02",
-        description: "Morning acai bowl and a drive to the North Shore."
+        description: "ホテルのプールにカイルアビーチ！まだまだ旅行ははじまったばかり。"
     },
     {
         id: "tHf_dkLSLfk",
         title: "Hawaii VLOG 03",
-        description: "Snorkeling at Hanauma Bay and sunset dinner."
+        description: "自転車でのレナーズ買い出しや、ファーマーズマーケットへ！"
     },
     {
         id: "HO4vBFKQjoo",
         title: "Hawaii VLOG 04",
-        description: "Shopping at Ala Moana Center and local food trucks."
+        description: "カカアコでウォールアート！激辛ジョバンニで悶絶！"
     },
     {
         id: "ka0J8nzOiFo",
         title: "Hawaii VLOG 05",
-        description: "Hiking Diamond Head and relaxing at the pool."
+        description: "ダイヤモンドヘッドへ！歩いて歩いて歩きまくった一日。"
     },
     {
         id: "zlrWI3cnuD0",
         title: "Hawaii VLOG 06",
-        description: "Final day, souvenir shopping, and flight home."
+        description: "ダウンタウン郊外へ、そこに現れたチャッキーの影…!?"
     },
     {
         id: "umh0wjJdf0U",
         title: "Hawaii VLOG 07",
-        description: "Continuing the adventure in Hawaii!"
+        description: "MORNING GLASS COFFEEとアラモアナショッピングセンターでまったりな一日。"
     }
 ];
