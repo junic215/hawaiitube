@@ -6,32 +6,32 @@ const videos = [
     },
     {
         id: "zFQbotstY-I",
-        title: "Hawaii VLOG 02",
+        title: "Part 02",
         description: "ホテルのプールにカイルアビーチ！まだまだ旅行ははじまったばかり。"
     },
     {
         id: "tHf_dkLSLfk",
-        title: "Hawaii VLOG 03",
+        title: "Part 03",
         description: "自転車でのレナーズ買い出しや、ファーマーズマーケットへ！"
     },
     {
         id: "HO4vBFKQjoo",
-        title: "Hawaii VLOG 04",
+        title: "Part 04",
         description: "カカアコでウォールアート！激辛ジョバンニで悶絶！"
     },
     {
         id: "ka0J8nzOiFo",
-        title: "Hawaii VLOG 05",
+        title: "Part 05",
         description: "ダイヤモンドヘッドへ！歩いて歩いて歩きまくった一日。"
     },
     {
         id: "zlrWI3cnuD0",
-        title: "Hawaii VLOG 06",
+        title: "Part 06",
         description: "ダウンタウン郊外へ、そこに現れたチャッキーの影…!?"
     },
     {
         id: "umh0wjJdf0U",
-        title: "Hawaii VLOG 07",
+        title: "Part 07",
         description: "MORNING GLASS COFFEEとアラモアナショッピングセンターでまったりな一日。"
     }
 ];
